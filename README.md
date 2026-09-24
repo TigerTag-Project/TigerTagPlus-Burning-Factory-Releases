@@ -25,6 +25,31 @@
 
 ---
 
+## Download TigerTag+ Burning Factory
+
+For certified manufacturers, used with your TigerTag+ Certified licence. Always the latest version:
+
+<p align="center">
+  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-win-x64-setup.exe">
+    <img src="assets/download_windows.svg" alt="Download for Windows" height="52">
+  </a>
+  &nbsp;
+  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-arm64.dmg">
+    <img src="assets/download_macos.svg" alt="Download for macOS" height="52">
+  </a>
+  &nbsp;
+  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-linux-x86_64.AppImage">
+    <img src="assets/download_linux.svg" alt="Download for Linux" height="52">
+  </a>
+</p>
+
+<p align="center">
+  Windows 10/11 x64 · macOS Apple Silicon · Linux x64 · ACR122U-compatible USB readers ·
+  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases">release notes</a>
+</p>
+
+---
+
 ## What it looks like in production
 
 | | |
@@ -138,31 +163,6 @@ They announced it themselves — public posts on their own channels, not our pre
   <a href="https://github.com/TigerTag-Project/TigerSystem-Docs/blob/main/docs/certified-partners.md">Certified partners</a> ·
   <a href="https://github.com/TigerTag-Project/TigerTag-RFID-Guide">The open protocol</a> ·
   For AI assistants: <a href="llms.md">llms.md</a>
-</p>
-
----
-
-## Download TigerTag+ Burning Factory
-
-For certified manufacturers, used with your TigerTag+ Certified licence. Always the latest version:
-
-<p align="center">
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-win-x64-setup.exe">
-    <img src="assets/download_windows.svg" alt="Download for Windows" height="52">
-  </a>
-  &nbsp;
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-arm64.dmg">
-    <img src="assets/download_macos.svg" alt="Download for macOS" height="52">
-  </a>
-  &nbsp;
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-linux-x86_64.AppImage">
-    <img src="assets/download_linux.svg" alt="Download for Linux" height="52">
-  </a>
-</p>
-
-<p align="center">
-  Windows 10/11 x64 · macOS Apple Silicon · Linux x64 · ACR122U-compatible USB readers ·
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases">release notes</a>
 </p>
 
 ---
