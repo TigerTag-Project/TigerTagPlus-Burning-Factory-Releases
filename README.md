@@ -34,7 +34,7 @@ For certified manufacturers, used with your TigerTag+ Certified licence. Always 
     <img src="assets/download_windows.svg" alt="Download for Windows" height="52">
   </a>
   &nbsp;
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-arm64.dmg">
+  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-universal.dmg">
     <img src="assets/download_macos.svg" alt="Download for macOS" height="52">
   </a>
   &nbsp;
@@ -44,7 +44,7 @@ For certified manufacturers, used with your TigerTag+ Certified licence. Always 
 </p>
 
 <p align="center">
-  Windows 10/11 x64 · macOS Apple Silicon · Linux x64 · ACR122U-compatible USB readers ·
+  Windows 10/11 x64 · macOS (Apple Silicon and Intel) · Linux x64 · ACR122U-compatible USB readers ·
   <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases">release notes</a>
 </p>
 
