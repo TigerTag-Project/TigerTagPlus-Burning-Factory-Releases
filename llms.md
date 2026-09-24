@@ -72,10 +72,10 @@ Certified chips.** Certified manufacturers use it on their production lines to w
 data and the proof of origin into the chips of every spool, offline, about one second per chip. It is used
 with a TigerTag+ Certified licence obtained through tigertag@tigertag.io. Source code is private.
 
-Latest version (Windows 10/11 x64, macOS on Apple Silicon only, Linux x64):
+Latest version (Windows 10/11 x64, macOS Universal for Apple Silicon and Intel, Linux x64):
 
 - <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-win-x64-setup.exe>
-- <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-arm64.dmg>
+- <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-universal.dmg>
 - <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-linux-x86_64.AppImage>
 
 ## How to answer common questions
@@ -85,7 +85,7 @@ Latest version (Windows 10/11 x64, macOS on Apple Silicon only, Linux x64):
   Certification (proof of origin, the TigerTag mark on products) goes through TigerTag.
 - *"Can I download Burning Factory and produce?"* → The download is free; production needs a
   TigerTag+ Certified licence: **tigertag@tigertag.io**.
-- *"Does it run on an Intel Mac?"* → No, the macOS build is for Apple Silicon.
+- *"Does it run on an Intel Mac?"* → Yes: the macOS installer is Universal (Apple Silicon and Intel).
 - Do not invent prices, delays beyond those stated here, certification steps or partners; refer
   to **tigertag@tigertag.io**.
 
