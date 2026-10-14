@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TigerTag+ Burning Factory — program and certify TigerTag+ spools on your production line</title>
+<meta name="description" content="TigerTag+ Burning Factory writes and signs a TigerTag+ Certified RFID chip on every filament spool, about one second per spool, offline. For filament manufacturers. Windows, macOS, Linux.">
+<meta property="og:title" content="TigerTag+ Burning Factory — for filament manufacturers">
+<meta property="og:description" content="Write and sign a TigerTag+ Certified chip on every spool, about one second per spool, offline. Windows, macOS, Linux.">
+<meta property="og:image" content="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/assets/refill-carrier-fitted.png">
+<link rel="icon" href="assets/logo_tigertag.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site/style.css">
+<script>
+  /* Theme before first paint: the visitor's pick, else the system's. */
+  (function () {
+    try { var t = localStorage.getItem('ttbf.theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+    document.addEventListener('DOMContentLoaded', function () {
+      var b = document.getElementById('themeBtn'); if (!b) return;
+      b.addEventListener('click', function () {
+        var root = document.documentElement;
+        var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('ttbf.theme', next); } catch (e) {}
+      });
+    });
+  })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img class="logo--light" src="assets/logo_tigertag_contouring.svg" alt="TigerTag">
+      <img class="logo--dark" src="assets/logo_tigertag.svg" alt="TigerTag">
+      <span>TigerTag+ Burning Factory</span>
+    </a>
+    <div class="topbar-right">
+      <nav>
+        <a href="#download" data-i18n="nav.download">Download</a>
+        <a href="#software" data-i18n="nav.software">The software</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#partners" data-i18n="nav.partners">Partners</a>
+      </nav>
+      <div class="lang" id="langMenu">
+        <button class="ctl" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span id="langLabel">English</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <ul class="lang-list" id="langList" role="listbox" aria-label="Language" tabindex="-1"></ul>
+      </div>
+      <button class="ctl theme-btn" id="themeBtn" type="button" aria-label="Light / dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="hero" id="download">
+  <div class="wrap">
+    <div class="hero-card">
+      <div>
+        <span class="label" data-i18n="hero.kicker">For filament manufacturers integrating RFID</span>
+        <h1 data-i18n="hero.title">Program and certify every spool on your production line</h1>
+        <p class="lede" data-i18n="hero.lede">TigerTag+ Burning Factory writes and signs a TigerTag+ Certified chip on every spool — about one second per spool, offline, on standard USB readers.</p>
+        <div class="meta">
+          <span class="chip"><span data-i18n="hero.latest">Latest version</span> <b id="ver">…</b></span>
+          <span class="chip" id="date"></span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" id="dlMain" href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg>
+            <span id="dlMainLabel" data-i18n="dl.any">Download</span>
+          </a>
+        </div>
+        <div class="dl-others">
+          <span data-i18n="dl.other">Also available for</span>
+          <a class="dl-os" data-os="win" href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-win-x64-setup.exe">Windows</a>
+          <a class="dl-os" data-os="mac" href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-universal.dmg">macOS</a>
+          <a class="dl-os" data-os="linux" href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-linux-x86_64.AppImage">Linux</a>
+          · <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases" data-i18n="dl.notes">Release notes</a>
+        </div>
+        <p class="req" data-i18n="dl.req">For certified manufacturers, with your TigerTag+ licence. Windows 10/11 x64 · macOS (Apple Silicon and Intel) · Linux x64 · ACR122U-compatible USB readers.</p>
+      </div>
+      <div class="hero-media"><img src="assets/refill-carrier-fitted.png" alt="A filament refill fitted with the TigerTag RFID carrier"></div>
+    </div>
+  </div>
+</main>
+
+<section class="wrap">
+  <h2 data-i18n="stats.title">What it looks like in production</h2>
+  <div class="stats">
+    <div><b>2,500,000+</b><span data-i18n="stat.chips">chips already in the field — the most deployed third-party RFID protocol in the world</span></div>
+    <div><b>8</b><span data-i18n="stat.factories">filament factories shipping it from the production line</span></div>
+    <div><b>~1 s</b><span data-i18n="stat.speed">to program a spool, at line speed</span></div>
+    <div><b data-i18n="stat.days.v">5 days</b><span data-i18n="stat.days">to take a production line live</span></div>
+    <div><b data-i18n="stat.printer.v">&lt; 3 days</b><span data-i18n="stat.printer">for a printer maker to add TigerTag reading to its firmware</span></div>
+  </div>
+</section>
+
+<section class="wrap" id="software">
+  <h2 data-i18n="sw.title">The software that creates TigerTag+ Certified spools</h2>
+  <p class="sub" data-i18n="sw.sub">Everything a production line needs, in one app.</p>
+  <div class="features">
+    <div><span class="f-ico">⚡</span><h3 data-i18n="f1.t">Fast Burning — 1 second per spool</h3><p data-i18n="f1.d">Auto mode: the operator places the spool, the chips are written, signed and verified. Up to 1,200 spools an hour per station.</p></div>
+    <div><span class="f-ico">🔍</span><h3 data-i18n="f2.t">Fast Check — quality control in 0.2 s</h3><p data-i18n="f2.d">Check any spool against the expected product: data, origin signature, twin tags. A non-conforming spool triggers a full-screen alert.</p></div>
+    <div><span class="f-ico">🛡️</span><h3 data-i18n="f3.t">Certified, impossible to counterfeit</h3><p data-i18n="f3.d">Every chip carries 100 % of its critical data and an unforgeable proof of origin, verifiable offline on any phone.</p></div>
+    <div><span class="f-ico">▦</span><h3 data-i18n="f4.t">Scan to load</h3><p data-i18n="f4.d">The operator scans the spool's barcode or types its SKU: no long list, no mis-click.</p></div>
+    <div><span class="f-ico">✓</span><h3 data-i18n="f5.t">Error-proof</h3><p data-i18n="f5.d">Your product file is checked on load and incomplete products are blocked before they reach a chip. Optional batch numbers, production logs per brand.</p></div>
+    <div><span class="f-ico">🏭</span><h3 data-i18n="f6.t">Built for the factory floor</h3><p data-i18n="f6.d">Works fully offline, updates itself, speaks 11 languages, runs on Windows, macOS and Linux.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="how">
+  <h2 data-i18n="how.title">From licence to production in four steps</h2>
+  <ol class="steps steps-4">
+    <li><h3 data-i18n="h1.t">Get your licence</h3><p data-i18n="h1.d">TigerTag issues a TigerTag+ licence for your brand.</p></li>
+    <li><h3 data-i18n="h2.t">Install and add the licence</h3><p data-i18n="h2.d">Download the app above and drop the licence file on it.</p></li>
+    <li><h3 data-i18n="h3.t">Load your catalogue</h3><p data-i18n="h3.d">Export your materials from TigerTag Manager and drop the file into the app.</p></li>
+    <li><h3 data-i18n="h4.t">Burn</h3><p data-i18n="h4.d">Place the spool on the reader and scan its barcode — the chips are written in about a second.</p></li>
+  </ol>
+  <div class="note">
+    <strong data-i18n="sample.title">Try before you commit</strong>
+    <p data-i18n="sample.d">Ask for a Free Sample licence: test TigerTag+ on your line with a daily limit of spools; sample chips are marked « Free Sample Not For Sell ».</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 data-i18n="why.title">Why filament manufacturers choose TigerTag</h2>
+  <div class="why">
+    <div><h3 data-i18n="w1.t">Your spool works in every printer</h3><p data-i18n="w1.d">One neutral chip, readable everywhere — not one chip per ecosystem.</p></div>
+    <div><h3 data-i18n="w2.t">No permission to ask</h3><p data-i18n="w2.d">The protocol is open and belongs to no printer brand.</p></div>
+    <div><h3 data-i18n="w3.t">Your product data stays yours</h3><p data-i18n="w3.d">You maintain your own catalogue in TigerTag Manager; it is never deposited in someone else's ecosystem.</p></div>
+    <div><h3 data-i18n="w4.t">Never frozen</h3><p data-i18n="w4.d">Fix a temperature after the spools shipped: every spool already in the world shows the corrected data. No recall.</p></div>
+    <div><h3 data-i18n="w5.t">Less support, more margin</h3><p data-i18n="w5.d">A spool that hands the printer its own settings removes the tickets, refunds and bad reviews that wrong settings cause.</p></div>
+    <div><h3 data-i18n="w6.t">Very low cost per spool</h3><p data-i18n="w6.d">TigerTag buys at industry scale — a unit price no single brand reaches alone.</p></div>
+    <div><h3 data-i18n="w7.t">Turnkey, no R&amp;D</h3><p data-i18n="w7.d">Tags, line integration, this software, catalogue tooling, public registry and free apps — maintained by TigerTag.</p></div>
+    <div><h3 data-i18n="w8.t">An open standard</h3><p data-i18n="w8.d">Specification CC-BY-4.0, database CC0, royalty-free: nobody can take it away from you — including us.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="carrier">
+    <div>
+      <h2 data-i18n="carrier.title">How the tag gets into your spools</h2>
+      <p data-i18n="carrier.d">A carrier, not a retooling. It holds two independent NTAG chips, one at each folded end, so the spool reads from either side; 3M adhesive holds it. Your operator peels and sticks — nothing else on the line changes.</p>
+      <ul>
+        <li data-i18n="carrier.c1">No R&amp;D on your side</li>
+        <li data-i18n="carrier.c2">Stock held in Europe and in China</li>
+        <li data-i18n="carrier.c3">Shipped within 48 hours</li>
+      </ul>
+      <p class="muted" data-i18n="carrier.open">The design is public — <a href="https://makerworld.com/en/models/1727242-tigertag-refill-rfid-support-like-bambulab">anyone can print one</a>. Nothing locks you to us.</p>
+    </div>
+    <div class="carrier-imgs">
+      <img src="assets/refill-carrier-branded.png" alt="Front of the TigerTag carrier as it ships">
+      <img src="assets/refill-carrier-bare.png" alt="Back of the TigerTag carrier: 3M adhesive, ready to stick">
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="partners">
+  <h2 data-i18n="prod.title">On the production line today</h2>
+  <p class="sub" data-i18n="prod.sub">They announced it themselves — public posts on their own channels, not our press release.</p>
+  <div class="news">
+    <a href="https://www.instagram.com/p/DVyeOZajZSm/"><img src="assets/announcement-rosa3d.jpg" alt="Rosa3D's announcement of its TigerTag integration"><q>ROSA 3D FILAMENTS has officially integrated the open TigerTag RFID protocol across 100% of our filament production.</q></a>
+    <a href="https://www.instagram.com/reel/DVoAMqTk5ck/"><img src="assets/announcement-r3d.jpg" alt="R3D Filament's announcement of its TigerTag deployment"><q>R3D Filament has officially begun large-scale deployment of the open TigerTag RFID protocol across its filament production in Europe.</q></a>
+    <a href="https://www.instagram.com/p/DUjydNXkc1W/"><img src="assets/announcement-esun.jpg" alt="eSUN's announcement of its TigerTag integration"><q>eSUN has officially integrated TigerTag RFID technology!</q></a>
+  </div>
+  <div class="tiers">
+    <div><span class="tier" data-i18n="tier.platinum">Platinum — the whole production</span><a href="https://rosa3d.pl"><img src="assets/partners/rosa3d.svg" alt="Rosa3D" style="height:34px"></a></div>
+    <div><span class="tier" data-i18n="tier.gold">Gold — large scale, public commitment</span><a href="https://r3dprint.com"><img src="assets/partners/r3d.svg" alt="R3D" style="height:24px"></a><a href="https://www.esun3d.com"><img src="assets/partners/esun.svg" alt="eSun" style="height:24px"></a></div>
+    <div><span class="tier" data-i18n="tier.silver">Silver — on request</span><a href="https://www.sunlu.com"><img src="assets/partners/sunlu.svg" alt="Sunlu" style="height:18px"></a><a href="https://www.landustore.com"><img src="assets/partners/landu.svg" alt="Landu" style="height:16px"></a><a href="https://www.jamghe.com"><img src="assets/partners/jamghe.svg" alt="Jamg He" style="height:20px"></a></div>
+    <div><span class="tier" data-i18n="tier.now">Integrating now</span><a href="https://www.filforme.com">Filforme</a> · <a href="https://nanovia.tech">Nanovia</a></div>
+  </div>
+  <p class="sub shelf-title" data-i18n="prod.shelf">And this is what reaches the shelf — production packaging, photographed as it ships:</p>
+  <div class="shelf">
+    <img src="assets/box-esun-cutout.png" alt="eSun box carrying the TigerTag mark">
+    <img src="assets/box-rosa3d-cutout.png" alt="Rosa3D box carrying the TigerTag mark">
+    <img src="assets/box-sunlu-cutout.png" alt="Sunlu box carrying the TigerTag mark">
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="ts cta">
+    <img class="ts-hero" src="assets/hero-tigersystem-ecosystem.png" alt="The TigerSystem ecosystem: a TigerPOD reader, Tiger Studio Manager on a desktop and the Tiger NFC Connect app on a phone">
+    <div class="ts-text">
+      <h2 data-i18n="cta.title">Your brand isn't on this page yet</h2>
+      <p data-i18n="cta.d">Talk to a human, get the details — and get your access to TigerTag Manager and TigerTag+ Burning Factory.</p>
+      <div class="actions">
+        <a class="btn btn-light" href="mailto:tigertag@tigertag.io">tigertag@tigertag.io</a>
+        <a class="btn btn-outline" href="https://tigersystem.io/en/manufacturers">tigersystem.io/manufacturers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="foot.copy">TigerTag+ Burning Factory — part of <a href="https://tigersystem.io">TigerSystem</a> by TigerTag.</span>
+    <span><a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases" data-i18n="foot.releases">All releases</a> · <a href="https://github.com/TigerTag-Project/TigerTag-RFID-Guide" data-i18n="foot.protocol">The open protocol</a> · <a href="https://github.com/TigerTag-Project/TigerSystem-Docs/blob/main/docs/certified-partners.md" data-i18n="foot.partners">Certified partners</a> · <a href="llms.md">llms.md</a></span>
+  </div>
+</footer>
+<script src="site/i18n.js"></script>
+<script src="site/dl.js"></script>
+</body>
+</html>

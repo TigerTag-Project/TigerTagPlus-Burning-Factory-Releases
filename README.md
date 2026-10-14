@@ -15,6 +15,10 @@
 </p>
 
 <p align="center">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/"><strong>⬇ Download page — in 11 languages</strong></a>
+</p>
+
+<p align="center">
   <img src="assets/refill-carrier-fitted.png" alt="A filament refill fitted with the TigerTag RFID carrier" width="300">
 </p>
 
