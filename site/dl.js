@@ -1,15 +1,16 @@
 /* TigerTag+ Burning Factory — download logic.
-   The installers have stable "latest" links (version-less file names), so the
-   buttons work without JavaScript. This script only (1) puts the visitor's
-   system on the big button and lists the two others, and (2) shows the latest
-   version and its date, asked from GitHub (offline: left as is). */
+   The installers carry their version in the file name
+   (TigerTagPlus-Burning-Factory-2.7.0-mac-universal.dmg), so the links are
+   resolved from the latest release, asked from GitHub. Without JavaScript or
+   offline, every button opens the latest release page. This script also puts
+   the visitor's system on the big button and lists the two others. */
 (function () {
   var REPO = 'TigerTag-Project/TigerTagPlus-Burning-Factory-Releases';
-  var BASE = 'https://github.com/' + REPO + '/releases/latest/download/';
+  var LATEST = 'https://github.com/' + REPO + '/releases/latest';
   var FILES = {
-    win: { name: 'Windows', file: 'TigerTagPlus-Burning-Factory-win-x64-setup.exe' },
-    mac: { name: 'macOS', file: 'TigerTagPlus-Burning-Factory-mac-universal.dmg' },
-    linux: { name: 'Linux', file: 'TigerTagPlus-Burning-Factory-linux-x86_64.AppImage' }
+    win: { name: 'Windows', suffix: '-win-x64-setup.exe' },
+    mac: { name: 'macOS', suffix: '-mac-universal.dmg' },
+    linux: { name: 'Linux', suffix: '-linux-x86_64.AppImage' }
   };
   var I = window.TTBF_I18N;
   var $ = function (id) { return document.getElementById(id); };
@@ -25,10 +26,23 @@
   }
   var os = detect();
 
+  /* Download URL of the versioned installer of `key` in the latest release
+     (TigerTagPlus-Burning-Factory-<version><suffix>); the release page if absent. */
+  function url(key) {
+    if (!rel) return LATEST;
+    var ver = String(rel.tag_name || '').replace(/^v/, '');
+    var want = 'TigerTagPlus-Burning-Factory-' + ver + FILES[key].suffix;
+    var assets = rel.assets || [];
+    for (var i = 0; i < assets.length; i++) if (assets[i].name === want) return assets[i].browser_download_url;
+    return LATEST;
+  }
+
   function render() {
     var main = $('dlMain'), label = $('dlMainLabel');
+    var others = document.querySelectorAll('.dl-os');
+    for (var j = 0; j < others.length; j++) others[j].href = url(others[j].getAttribute('data-os'));
     if (os && main && label) {
-      main.href = BASE + FILES[os].file;
+      main.href = url(os);
       label.removeAttribute('data-i18n');   // live text: i18n.js must not overwrite it
       label.textContent = I.t('dl.for', { os: FILES[os].name });
       var links = document.querySelectorAll('.dl-os');
