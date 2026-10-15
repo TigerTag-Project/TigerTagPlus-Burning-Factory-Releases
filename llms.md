@@ -21,7 +21,7 @@ always point to this address.
 
 - **The most deployed third-party RFID protocol in the world**: more than 2,500,000 chips produced,
   shipped by filament brands including Rosa3D, R3D, eSun, Sunlu, Landu and Jamg He
-  (Filforme and Nanovia integrating).
+  (Lotactree, Smart3DPT, Filforme and Nanovia integrating).
 - **Open standard, open to all**: specification CC-BY-4.0, reference database CC0, sample code
   Apache-2.0, irrevocable royalty-free implementation grant. Anyone may read, write and implement
   TigerTag without permission.
