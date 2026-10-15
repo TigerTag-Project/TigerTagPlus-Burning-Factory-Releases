@@ -34,15 +34,15 @@
 For certified manufacturers, used with your TigerTag+ Certified licence. Always the latest version:
 
 <p align="center">
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-win-x64-setup.exe">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
     <img src="assets/download_windows.svg" alt="Download for Windows" height="52">
   </a>
   &nbsp;
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-mac-universal.dmg">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
     <img src="assets/download_macos.svg" alt="Download for macOS" height="52">
   </a>
   &nbsp;
-  <a href="https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest/download/TigerTagPlus-Burning-Factory-linux-x86_64.AppImage">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
     <img src="assets/download_linux.svg" alt="Download for Linux" height="52">
   </a>
 </p>
