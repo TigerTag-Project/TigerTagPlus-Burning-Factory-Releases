@@ -346,7 +346,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .features div, .why div { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
-.f-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+.f-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); margin-bottom: 10px; }
+.f-ico svg { width: 22px; height: 22px; }
 .features h3, .why h3 { font-size: 16px; margin: 0 0 6px; }
 .features p, .why p { margin: 0; color: var(--muted); font-size: 14px; }
 .why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }

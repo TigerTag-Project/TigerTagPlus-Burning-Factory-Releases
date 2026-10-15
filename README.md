@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/"><strong>⬇ Download page — in 11 languages</strong></a>
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/"><strong>Download page — in 11 languages</strong></a>
 </p>
 
 <p align="center">
@@ -146,7 +146,7 @@ They announced it themselves — public posts on their own channels, not our pre
 | **Platinum** — the whole production | <a href="https://rosa3d.pl"><img src="assets/partners/rosa3d.svg" height="38" alt="Rosa3D"></a> |
 | **Gold** — large scale, public commitment | <a href="https://r3dprint.com"><img src="assets/partners/r3d.svg" height="26" alt="R3D"></a> &nbsp; <a href="https://www.esun3d.com"><img src="assets/partners/esun.svg" height="26" alt="eSun"></a> |
 | **Silver** — on request | <a href="https://www.sunlu.com"><img src="assets/partners/sunlu.svg" height="18" alt="Sunlu"></a> &nbsp; <a href="https://www.landustore.com"><img src="assets/partners/landu.svg" height="16" alt="Landu"></a> &nbsp; <a href="https://www.jamghe.com"><img src="assets/partners/jamghe.svg" height="20" alt="Jamg He"></a> |
-| Integrating now | [Filforme](https://www.filforme.com) · [Nanovia](https://nanovia.tech) |
+| Integrating now | <a href="https://pt.lotactree.com"><img src="assets/partners/lotactree.svg" height="16" alt="Lotactree"></a> &nbsp; <a href="https://www.smart3d.pt"><img src="assets/partners/smart3dpt.svg" height="20" alt="Smart3DPT"></a> &nbsp; [Filforme](https://www.filforme.com) · [Nanovia](https://nanovia.tech) |
 
 **And this is what reaches the shelf** — production packaging, photographed as it ships:
 
