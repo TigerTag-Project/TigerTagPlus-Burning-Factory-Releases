@@ -1,17 +1,12 @@
 /* TigerTag+ Burning Factory — download logic.
-   The installers carry their version in the file name
-   (TigerTagPlus-Burning-Factory-2.7.0-mac-universal.dmg), so the links are
-   resolved from the latest release, asked from GitHub. Without JavaScript or
-   offline, every button opens the latest release page. This script also puts
-   the visitor's system on the big button and lists the two others. */
+   The latest release comes from latest.js. This script puts the visitor's
+   system on the big button, lists the two others, and fills the three
+   platform cards (version, size, file name, direct link). Without JavaScript
+   or offline, the hero buttons open the latest release page and each card's
+   button its permanent link (download/<system>/). */
 (function () {
-  var REPO = 'TigerTag-Project/TigerTagPlus-Burning-Factory-Releases';
-  var LATEST = 'https://github.com/' + REPO + '/releases/latest';
-  var FILES = {
-    win: { name: 'Windows', suffix: '-win-x64-setup.exe' },
-    mac: { name: 'macOS', suffix: '-mac-universal.dmg' },
-    linux: { name: 'Linux', suffix: '-linux-x86_64.AppImage' }
-  };
+  var L = window.TTBF_LATEST;
+  var FILES = L.FILES;
   var I = window.TTBF_I18N;
   var $ = function (id) { return document.getElementById(id); };
   var rel = null;
@@ -26,15 +21,31 @@
   }
   var os = detect();
 
-  /* Download URL of the versioned installer of `key` in the latest release
-     (TigerTagPlus-Burning-Factory-<version><suffix>); the release page if absent. */
+  /* Direct download URL of the latest installer of `key`; the release page if absent. */
   function url(key) {
-    if (!rel) return LATEST;
-    var ver = String(rel.tag_name || '').replace(/^v/, '');
-    var want = 'TigerTagPlus-Burning-Factory-' + ver + FILES[key].suffix;
-    var assets = rel.assets || [];
-    for (var i = 0; i < assets.length; i++) if (assets[i].name === want) return assets[i].browser_download_url;
-    return LATEST;
+    var a = rel && L.asset(rel, key);
+    return a ? a.url : L.RELEASE_PAGE;
+  }
+
+  function size(bytes) {
+    try { return new Intl.NumberFormat(I.locale(), { maximumFractionDigits: 0 }).format(bytes / 1048576) + ' MB'; }
+    catch (e) { return Math.round(bytes / 1048576) + ' MB'; }
+  }
+
+  /* The three platform cards: filled from the release, the visitor's system first. */
+  function renderCards() {
+    var cards = document.querySelectorAll('.platform');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i], key = card.getAttribute('data-os');
+      var a = rel && L.asset(rel, key);
+      card.classList.toggle('is-mine', key === os);
+      card.querySelector('.p-link input').value = L.permalink(key);
+      if (!rel) continue;
+      card.querySelector('.p-ver').textContent = L.version(rel);
+      card.querySelector('.p-size').textContent = a ? size(a.size) : '—';
+      card.querySelector('.p-file').textContent = a ? a.name : '';
+      card.querySelector('.p-dl').href = a ? a.url : L.RELEASE_PAGE;
+    }
   }
 
   function render() {
@@ -49,15 +60,34 @@
       for (var i = 0; i < links.length; i++) links[i].hidden = links[i].getAttribute('data-os') === os;
     }
     if (rel) {
-      $('ver').textContent = String(rel.tag_name || '').replace(/^v/, '');
+      $('ver').textContent = L.version(rel);
       try { $('date').textContent = new Date(rel.published_at).toLocaleDateString(I.locale(), { year: 'numeric', month: 'long', day: 'numeric' }); } catch (e) {}
     }
+    renderCards();
   }
+
+  /* « Copy » next to each permanent link. */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.p-copy');
+    if (!btn) return;
+    var input = btn.parentNode.querySelector('input');
+    var done = function () {
+      btn.textContent = I.t('all.copied');
+      setTimeout(function () { btn.textContent = I.t('all.copy'); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(input.value).then(done, function () { input.select(); });
+    else { input.select(); try { document.execCommand('copy'); done(); } catch (err) {} }
+  });
+
   document.addEventListener('ttbf:lang', render);
   document.addEventListener('DOMContentLoaded', render);
 
-  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  L.get()
     .then(function (data) { rel = data; render(); })
-    .catch(function () { var d = $('date'); if (d) d.hidden = true; var v = $('ver'); if (v && v.textContent === '…') v.textContent = 'latest'; });
+    .catch(function () {
+      var d = $('date'); if (d) d.hidden = true;
+      var v = $('ver'); if (v && v.textContent === '…') v.textContent = 'latest';
+      var vs = document.querySelectorAll('.p-ver');
+      for (var i = 0; i < vs.length; i++) vs[i].textContent = 'latest';
+    });
 })();

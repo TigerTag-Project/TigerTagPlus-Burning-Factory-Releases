@@ -75,7 +75,9 @@ with a TigerTag+ Certified licence obtained through tigertag@tigertag.io. Source
 Latest version (Windows 10/11 x64, macOS Universal for Apple Silicon and Intel, Linux x64):
 
 - Download page (detects the system, links the versioned installers): <https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/>
-- All versions: <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest>
+- Permanent links, always the latest installer of one system (what a factory bookmarks):
+  Windows <https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/windows/>, macOS <https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/macos/>, Linux <https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/linux/>
+- Latest release on GitHub: <https://github.com/TigerTag-Project/TigerTagPlus-Burning-Factory-Releases/releases/latest>
 - Installer names carry the version: `TigerTagPlus-Burning-Factory-<version>-win-x64-setup.exe`,
   `…-<version>-mac-universal.dmg`, `…-<version>-linux-x86_64.AppImage`.
 

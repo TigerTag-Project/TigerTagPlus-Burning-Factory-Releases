@@ -32,17 +32,18 @@
 ## Download TigerTag+ Burning Factory
 
 For certified manufacturers, used with your TigerTag+ Certified licence. Always the latest version:
+each button downloads the newest installer of its system, whatever the version.
 
 <p align="center">
-  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/windows/">
     <img src="assets/download_windows.svg" alt="Download for Windows" height="52">
   </a>
   &nbsp;
-  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/macos/">
     <img src="assets/download_macos.svg" alt="Download for macOS" height="52">
   </a>
   &nbsp;
-  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/">
+  <a href="https://tigertag-project.github.io/TigerTagPlus-Burning-Factory-Releases/download/linux/">
     <img src="assets/download_linux.svg" alt="Download for Linux" height="52">
   </a>
 </p>
