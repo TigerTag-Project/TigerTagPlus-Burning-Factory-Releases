@@ -394,3 +394,36 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .tier { min-width: 0; width: 100%; }
   .shelf img { height: 120px; }
 }
+
+/* Platform cards: the three installers of the latest release, with their permanent links */
+.platforms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.platform { display: flex; flex-direction: column; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; min-width: 0; }
+.platform.is-mine { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.p-head { display: flex; align-items: center; gap: 12px; }
+.p-head h3 { font-size: 18px; margin: 0; }
+.p-logo { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 12px; color: #fff; }
+.p-logo svg { width: 22px; height: 22px; }
+.p-logo--windows { background: #0078d4; }
+.p-logo--macos { background: #1d1d1f; }
+:root[data-theme="dark"] .p-logo--macos { background: #3a3a3c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-logo--macos { background: #3a3a3c; } }
+.p-logo--linux { background: #1f2430; color: #fcc624; }
+.p-req { display: block; font-size: 13px; color: var(--muted); }
+.p-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+.p-meta div { background: var(--surface-2); border-radius: 10px; padding: 8px 12px; }
+.p-meta dt { font-size: 12px; color: var(--muted); }
+.p-meta dd { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+.p-file { flex: 1; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; min-height: 1.5em; }
+.platform .p-dl { justify-content: center; min-width: 0; width: 100%; }
+.p-link { display: grid; gap: 6px; font-size: 12px; color: var(--muted); }
+.p-copyrow { display: flex; gap: 6px; }
+.p-copyrow input { flex: 1; min-width: 0; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; }
+.p-copy { font-size: 12px; padding: 6px 10px; border-radius: 8px; }
+.p-note { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+@media (max-width: 860px) { .platforms { grid-template-columns: 1fr; } }
+
+/* Permanent link pages (download/<system>/) */
+.redir { max-width: 560px; margin: 0 auto; padding: 64px 20px; text-align: center; }
+.redir img { height: 44px; margin-bottom: 18px; }
+.redir h1 { font-size: 24px; letter-spacing: -.01em; margin: 0 0 10px; }
+.redir p { color: var(--muted); }
